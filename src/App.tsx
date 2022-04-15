@@ -1,10 +1,11 @@
+import Layout from './components/Layout';
 import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div className="flex justify-center">
+    <Layout>
       <Home />
-    </div>
+    </Layout>
   );
 };
 

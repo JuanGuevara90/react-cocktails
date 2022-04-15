@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Button from '../components/Button'
 import CocktailCard from '../components/CocktailCard'
 import SearchForm from '../components/SearchForm'
 import CocktailModel from '../models/Cocktail'
