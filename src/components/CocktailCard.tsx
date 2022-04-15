@@ -1,22 +1,29 @@
 import React from 'react';
+import CocktailModel from '../models/Cocktail';
 
-type Props = {};
+interface CocktailCardsProps {
+  data: CocktailModel;
+};
 
-const CocktailCard = (props: Props) => {
+const CocktailCard = ({ data }: CocktailCardsProps) => {
+  const { strDrink, strAlcoholic, strGlass, strDrinkThumb } = data;
+
   return (
     <div className='max-w-xs overflow-hidden rounded-lg shadow-lg hover:scale-105'>
       <img
         className='object-cover w-full h-48'
-        src='https://images.pexels.com/photos/2033997/pexels-photo-2033997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        src={strDrinkThumb}
         alt='Flower and sky'
       />
       <div className='px-6 py-4'>
         <h4 className='mb-3 text-xl font-semibold text-gray-800'>
-          This is the title
+          {strDrink}
         </h4>
         <p className='leading-normal text-gray-700'>
-          Lorem ipsum dolor, sit amet cons ectetur adipis icing elit. Praesen
-          tium, quibusdam facere quo laborum maiores sequi nam tenetur laud.
+          {strGlass}
+        </p>
+        <p className='leading-normal text-gray-700'>
+          {strAlcoholic}
         </p>
       </div>
     </div>
