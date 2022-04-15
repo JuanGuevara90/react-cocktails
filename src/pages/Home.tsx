@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../components/Button'
 import CocktailCard from '../components/CocktailCard'
+import SearchForm from '../components/SearchForm'
 import CocktailModel from '../models/Cocktail'
 
 type Props = {}
@@ -14,9 +15,10 @@ const CocktailDemo: CocktailModel = {
 }
 
 const Home = (props: Props) => {
+
   return (
     <div>
-      <Button label="my button"/>
+      <SearchForm />
       <CocktailCard data={CocktailDemo} />
     </div>
   )
