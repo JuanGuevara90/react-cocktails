@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import CocktailCard from '../components/CocktailCard'
 import SearchForm from '../components/SearchForm'
@@ -15,10 +15,11 @@ const CocktailDemo: CocktailModel = {
 }
 
 const Home = (props: Props) => {
+  const [searchQuery, setSearchQuery] = useState<string>("Margarita");
 
   return (
     <div>
-      <SearchForm />
+      <SearchForm query={searchQuery} onSearchChange={(value) => setSearchQuery(value)}/>
       <CocktailCard data={CocktailDemo} />
     </div>
   )

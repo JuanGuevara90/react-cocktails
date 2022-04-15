@@ -1,16 +1,30 @@
-import React from 'react'
+import React from "react";
 
 interface SearchForm {
-    value?:string;
-    onSearchChange?:React.ChangeEventHandler<HTMLInputElement>;
+  query?: string;
+  onSearchChange?: (query: string) => void;
 }
-const SearchForm = ({value,onSearchChange}:SearchForm ) => {
-    return (
-        <div className="my-5">
-            <h2 className="mb-3 ">Search your favorite cocktail</h2>
-            <input className="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" value={value}  onChange={onSearchChange}  type="text"/>
-        </div> 
-    )
-}
+const SearchForm = ({ query, onSearchChange }: SearchForm) => {
+  const handleSearchChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (onSearchChange) {
+      const { target: { value } } = event;
+      onSearchChange(value);
+    }
+  };
 
-export default SearchForm
+  return (
+    <div className="py-6 px-10 my-5 border-[0.5px] bg-gray-100 border-gray-100 rounded-md">
+      <h2 className="mb-3">Search your favorite cocktail</h2>
+      <input
+        className="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline"
+        value={query}
+        onChange={handleSearchChange}
+        type="text"
+      />
+    </div>
+  );
+};
+
+export default SearchForm;
