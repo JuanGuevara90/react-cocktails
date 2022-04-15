@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import CocktailsList from '../components/CocktailsList'
+import { useState } from 'react'
+import CocktailList from '../components/CocktailList'
 import PageTitle from '../components/PageTitle'
 import SearchForm from '../components/SearchForm'
 import CocktailModel from '../models/Cocktail'
@@ -20,7 +20,7 @@ const Home = (props: Props) => {
     <>
       <PageTitle text="Cocktail Land" />
       <SearchForm query={searchQuery} onSearchChange={(value) => setSearchQuery(value)}/>
-      <CocktailsList  listCocktails={Array.from({ length: 10 }, () => CocktailDemo)}/>
+      <CocktailList  listCocktails={Array.from({ length: 10 }, () => CocktailDemo)}/>
     </>
   )
 }
