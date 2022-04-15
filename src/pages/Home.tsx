@@ -20,7 +20,7 @@ const Home = (props: Props) => {
     <>
       <PageTitle text="Cocktail Land" />
       <SearchForm query={searchQuery} onSearchChange={(value) => setSearchQuery(value)}/>
-      <CocktailsList  listCocktails={[CocktailDemo,CocktailDemo,CocktailDemo]}/>
+      <CocktailsList  listCocktails={Array.from({ length: 10 }, () => CocktailDemo)}/>
     </>
   )
 }

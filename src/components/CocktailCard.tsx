@@ -11,7 +11,7 @@ const CocktailCard = ({ data, onDetailClick }: CocktailCardsProps) => {
   const {  idDrink, strDrink, strAlcoholic, strGlass, strDrinkThumb } = data;
 
   return (
-    <div className="w-72 bg-white overflow-hidden rounded-lg shadow-lg hover:scale-105">
+    <div className="w-72 bg-white overflow-hidden rounded-lg shadow-lg hover:scale-105 m-2">
       <img
         className="object-cover w-full h-72"
         src={strDrinkThumb}
