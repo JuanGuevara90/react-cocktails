@@ -11,8 +11,8 @@ const CocktailList = ({ listCocktails }: CockTailListProps) => {
   }
 
   return (
-    <section className="mt-5 mb-24 text-center">
-      <h2 className="text-2xl text-cyan-600 font-bold mb-5">Cocktails</h2>
+    <section className="mt-5 mb-24">
+      <h2 className="text-2xl text-cyan-600 font-bold mb-5 text-center">Cocktails</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {listCocktails.map((cocktail: CocktailModel, index: number) => {
           return <CocktailCard key={`cocktailID_${index}`} data={cocktail} />;
