@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { fetchCocktailsByQuery } from '../api/search'
 import CocktailList from '../components/CocktailList'
 import PageTitle from '../components/PageTitle'
 import SearchForm from '../components/SearchForm'
@@ -16,11 +17,17 @@ const CocktailDemo: CocktailModel = {
 
 const Home = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState<string>("Margarita");
+  const [cocktails, setCocktails] = useState<CocktailModel[]>([]);
+
+  useEffect(() => {
+    fetchCocktailsByQuery(searchQuery).then(({ data: { drinks } }) => setCocktails(drinks));
+  }, [searchQuery]);
+
   return (
     <>
       <PageTitle text="Cocktail Land" />
       <SearchForm query={searchQuery} onSearchChange={(value) => setSearchQuery(value)}/>
-      <CocktailList  listCocktails={Array.from({ length: 10 }, () => CocktailDemo)}/>
+      <CocktailList  listCocktails={cocktails}/>
     </>
   )
 }
