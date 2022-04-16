@@ -11,13 +11,13 @@ const CocktailCard = ({ data, onDetailClick }: CocktailCardsProps) => {
   const {  idDrink, strDrink, strAlcoholic, strGlass, strDrinkThumb } = data;
 
   return (
-    <div className="w-72 bg-white overflow-hidden rounded-lg shadow-lg hover:scale-105 m-2">
+    <div className="flex flex-col w-72 bg-white overflow-hidden rounded-lg shadow-lg hover:scale-105 m-2">
       <img
         className="object-cover w-full h-72"
         src={strDrinkThumb}
         alt={`drink-${idDrink}`}
       />
-      <div className="p-3">
+      <div className="flex flex-col flex-grow p-3 pb-0">
         <h4 className="mb-3 text-3xl font-semibold text-gray-800">
           {strDrink}
         </h4>
@@ -27,9 +27,9 @@ const CocktailCard = ({ data, onDetailClick }: CocktailCardsProps) => {
         <p className="text-sm text-gray-500">
           {strAlcoholic}
         </p>
-        <div className="flex justify-end">
-          <Button label="See details" onClick={onDetailClick} />
-        </div>
+      </div>
+      <div className="flex justify-end p-3">
+        <Button label="See details" onClick={onDetailClick} />
       </div>
     </div>
   );
