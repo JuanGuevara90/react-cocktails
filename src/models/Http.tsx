@@ -1,5 +1,5 @@
 import CocktailModel from './Cocktail';
 
-export interface SearchCocktailsResponse {
+export interface CocktailsResponse {
   drinks: CocktailModel[];
 }

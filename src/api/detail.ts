@@ -2,11 +2,9 @@ import axios, { AxiosResponse } from "axios";
 
 import { CocktailsResponse } from "./../models/Http";
 
-export const fetchCocktailsByQuery = (
-  query: string
+export const fetchCocktailsByID = (
+  id?: string
 ): Promise<AxiosResponse<CocktailsResponse, any>> =>
   axios.get<CocktailsResponse>(
-    `${import.meta.env.VITE_SEARCH_URL}${query}`
+    `${import.meta.env.VITE_FIND_BY_ID}${id}`
   );
-
-

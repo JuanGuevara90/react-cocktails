@@ -8,7 +8,7 @@ interface CocktailCardsProps {
 };
 
 const CocktailCard = ({ data, onDetailClick }: CocktailCardsProps) => {
-  const {  idDrink, strDrink, strAlcoholic, strGlass, strDrinkThumb } = data;
+  const { idDrink, strDrink, strAlcoholic, strGlass, strDrinkThumb } = data;
 
   return (
     <div className="flex flex-col w-72 bg-white overflow-hidden rounded-lg shadow-lg hover:scale-105 m-2">
